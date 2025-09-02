@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Viajoyo</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Viajoyo</div>
+      <nav class="menu">
+        <a href="#">Paquetes</a>
+        <a href="#">Categorías</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+  <!-- HERO con imagen de fondo -->
+  <section class="hero" aria-label="Portada">
+    <div class="hero__bg"></div>
+    <div class="container hero__content">
+      <div class="search-card">
+        <h1 class="search-title">Descubrí tu próximo destino</h1>
+        <p class="search-sub">Los mejores paquetes al mejor precio</p>
+
+        <form id="searchForm" class="search-grid" novalidate>
+          <label class="field">
+            <span class="label">Origen</span>
+            <input id="origin" name="origin" type="text" placeholder="Buenos Aires" required />
+          </label>
+
+          <label class="field">
+            <span class="label">Destino</span>
+            <input id="destination" name="destination" type="text" placeholder="Madrid, Iguazú, Caribe…" required />
+          </label>
+
+          <label class="field">
+            <span class="label">Mes de salida</span>
+            <input id="month" name="month" type="month" required />
+          </label>
+
+          <div class="actions">
+            <button type="submit" class="btn">Buscar</button>
+            <button type="button" id="resetBtn" class="btn secondary">Limpiar</button>
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+    <!-- Grilla de paquetes -->
+    <section class="container paquetes" id="paquetes">
+  <h2 class="paquetes-title">Paquetes recomendados</h2>
+
+  <div class="carousel">
+    <button class="car-btn prev" id="prevBtn" aria-label="Anterior">‹</button>
+
+    <!-- NUEVO: el que scrollea es este -->
+    <div class="car-track" id="carTrack">
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <button class="car-btn next" id="nextBtn" aria-label="Siguiente">›</button>
+  </div>
+
+  <!-- BANNER FULL-WIDTH -->
+<section class="banner-full">
+  <div class="banner-bg" style="--img:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=2000&auto=format&fit=crop')"></div>
+  <div class="banner-content container">
+    <h3 class="banner-title">Viajá con Viajoyo</h3>
+    <p class="banner-sub">Explorá destinos únicos, viví experiencias inolvidables y viajá sin preocupaciones.</p>
+    <a class="btn" href="#paquetes">Ver ofertas</a>
+  </div>
+</section> 
+  
+  <!-- SEGMENTACIÓN -->
+<!-- SEGMENTACIÓN -->
+<section class="container segmentos">
+  <div class="seg-grid">
+    <!-- grande -->
+    <a class="seg-card seg-lg"
+       style="--img: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop')"
+       href="paquetes.html?segment=verano">
+      <span>Verano</span>
+    </a>
+
+    <!-- chicas -->
+    <a class="seg-card"
+       style="--img: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop')"
+       href="paquetes.html?segment=playas">
+      <span>Playas</span>
+    </a>
+
+    <a class="seg-card"
+       style="--img: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop')"
+       href="paquetes.html?segment=exoticos">
+      <span>Exóticos</span>
+    </a>
+
+    <a class="seg-card"
+       style="--img: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop')"
+       href="paquetes.html?segment=escapadas">
+      <span>Escapadas</span>
+    </a>
+
+    <a class="seg-card"
+       style="--img: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop')"
+       href="paquetes.html?segment=grupales">
+      <span>Grupales</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+  <script src="js/data.js?v=6"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

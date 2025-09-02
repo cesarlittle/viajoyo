@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Viajoyo — Paquetes</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Viajoyo</div>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Filtros arriba (mismo form para re-buscar) -->
+  <main class="container" style="padding: 20px 16px;">
+    <h1 class="paquetes-title">Paquetes</h1>
+
+    <form id="searchForm" class="search-grid" novalidate style="margin: 10px 0 16px;">
+      <label class="field">
+        <span class="label">Origen</span>
+        <input id="origin" name="origin" type="text" placeholder="Buenos Aires" />
+      </label>
+      <label class="field">
+        <span class="label">Destino</span>
+        <input id="destination" name="destination" type="text" placeholder="Madrid, Iguazú, Caribe…" />
+      </label>
+      <label class="field">
+        <span class="label">Mes de salida</span>
+        <input id="month" name="month" type="month" />
+      </label>
+      <div class="actions">
+        <button type="submit" class="btn">Buscar</button>
+        <button type="button" id="resetBtn" class="btn secondary">Limpiar</button>
+      </div>
+    </form>
+
+    <p id="chips" style="margin: 6px 0 12px;"></p>
+
+    <section class="paquetes" style="padding-top: 0;">
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/paquetes.js"></script>
+</body>
+</html>

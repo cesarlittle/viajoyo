@@ -1,0 +1,345 @@
+/* Reset mínimo */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* Tipografía y layout base */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #111827; /* gris oscuro */
+  background: #f9fafb; /* gris clarito */
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky; top: 0; z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+.navbar .container {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.logo { font-weight: 700; }
+.menu a {
+  text-decoration: none;
+  color: #374151;
+  margin-left: 16px;
+}
+.menu a:hover { color: #1d4ed8; }
+
+/* Botón de prueba */
+.btn {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #1d4ed8;
+  color: #fff;
+  cursor: pointer;
+}
+.btn:hover { background: #1e40af; }
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 62vh;
+  display: grid;
+  align-items: end;
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+              center / cover no-repeat;
+  filter: saturate(1.05);
+}
+.hero::after {
+  /* leve degradado para contraste del card */
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.35));
+}
+.hero__content { position: relative; padding: 24px 16px 32px; }
+
+/* ===== CARD DE BÚSQUEDA ===== */
+.search-card {
+  background: rgba(255,255,255,0.92);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.search-title { margin: 0; font-size: 24px; font-weight: 800; }
+.search-sub   { margin: 4px 0 10px; color: #6b7280; }
+
+.search-grid {
+  display: grid; gap: 12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .search-grid { grid-template-columns: 1fr 1fr 1fr auto; align-items: end; }
+}
+
+.field { display: flex; flex-direction: column; }
+.label { font-size: 13px; color: #374151; margin-bottom: 6px; }
+.field input {
+  height: 42px; padding: 0 12px;
+  border: 1px solid #d1d5db; border-radius: 10px;
+  outline: none;
+}
+.field input:focus { border-color: #1d4ed8; box-shadow: 0 0 0 3px rgba(29,78,216,0.15); }
+
+.actions { display: flex; align-items: center; }
+.actions .btn { height: 42px; }
+
+/* ===== Grilla de paquetes ===== */
+.paquetes { padding: 40px 0; }
+.paquetes-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.card-paquete {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+  transition: transform .2s;
+}
+.card-paquete:hover { transform: translateY(-4px); }
+
+.card-paquete img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-paquete .info { padding: 12px; }
+.card-paquete h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.card-paquete p {
+  margin: 2px 0;
+  color: #374151;
+  font-size: 14px;
+}
+.card-paquete .precio {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1d4ed8;
+}
+/* Asegurar capas correctas en el hero */
+.hero__content { position: relative; z-index: 2; }  /* formulario arriba de todo */
+.hero__bg { z-index: 0; }                           /* foto al fondo */
+.hero::after { z-index: 1; pointer-events: none; }  /* velo debajo del form y no bloquea clicks */
+.btn.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+.btn.secondary:hover { background: #d1d5db; }
+/* ===== Carrusel móvil ===== */
+.carousel { position: relative; }
+
+/* Botones (solo visibles en móvil) */
+.car-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 36px; height: 36px; border: 0; border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  display: none; /* se activan en móvil */
+  align-items: center; justify-content: center;
+  font-size: 24px; line-height: 1; cursor: pointer;
+}
+.car-btn.prev { left: 6px; }
+.car-btn.next { right: 6px; }
+
+/* Activamos carrusel y flechas SEMI-TOUCH en <640px */
+@media (max-width: 639px) {
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 6px 8px; /* aire y evita cortar sombras */
+  }
+  .car-btn { display: inline-flex; }
+
+  /* La grilla se vuelve “columnas continuas” en móvil */
+  .grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: none;   /* anulamos columnas normales */
+    grid-auto-flow: column;        /* fluye en columnas */
+    grid-auto-columns: 85%;        /* cada card ocupa ~85% del ancho */
+  }
+
+  /* Cada tarjeta se alinea al inicio del “snap” */
+  .card-paquete { scroll-snap-align: start; }
+}
+
+/* En ≥640px queda tu grilla normal (ya la tenés definida) */
+/* Carrusel */
+.carousel { position: relative; }
+.car-track { overflow: visible; }       /* desktop: sin scroll aquí */
+
+/* Flechas fijas (no scrollean) */
+.car-btn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; border: 0; border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+  display: none;                        /* solo en móvil */
+  align-items: center; justify-content: center;
+  font-size: 24px; line-height: 1; cursor: pointer;
+  z-index: 10;                          /* por encima de las tarjetas */
+}
+.car-btn.prev { left: 6px; }
+.car-btn.next { right: 6px; }
+
+/* Modo móvil */
+@media (max-width: 639px) {
+  .car-track {
+    overflow-x: auto;                   /* ahora scrollea el track */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 6px 8px;
+  }
+  .car-btn { display: inline-flex; }
+
+  .grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 85%;
+  }
+  .card-paquete { scroll-snap-align: start; }
+}
+.card-link { display: block; color: inherit; text-decoration: none; }
+.card-link:focus { outline: 3px solid rgba(29,78,216,.35); border-radius: 12px; }
+.detail { display: grid; gap: 18px; margin-top: 10px; }
+.detail-hero img { width: 100%; height: 360px; object-fit: cover; border-radius: 16px; }
+.detail-info { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 16px; box-shadow: 0 6px 14px rgba(0,0,0,.05); }
+
+.detail-price { font-size: 22px; font-weight: 800; color: #1d4ed8; margin: 0 0 8px; }
+.detail-line { margin: 4px 0; color: #374151; }
+.detail-desc { margin-top: 8px; color: #374151; }
+
+.detail-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.tag { background: #eef2ff; color: #1d4ed8; padding: 6px 10px; border-radius: 999px; font-size: 12px; border: 1px solid #c7d2fe; }
+
+.detail-actions { display: flex; gap: 10px; margin-top: 12px; }
+
+@media (min-width: 900px) {
+  .detail { grid-template-columns: 2fr 1fr; align-items: start; }
+}
+/* ===== Segmentación ===== */
+.segmentos { padding: 32px 0; }
+.seg-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .seg-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 900px) {
+  .seg-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.seg-card {
+  position: relative;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 150px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 10px 16px rgba(0,0,0,.08);
+}
+.seg-card::before {
+  content: "";
+  position: absolute; inset: 0;
+
+  /* ⬇️ ESTAS 4 LÍNEAS son la regla de la imagen */
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+  transition: transform .3s ease;
+}
+
+}
+.seg-card::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.45));
+}
+.seg-card span {
+  position: absolute; left: 0; right: 0; bottom: 16px;
+  text-align: center; font-weight: 800; font-size: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,.35);
+}
+.seg-card:hover::before { transform: scale(1.06); }
+
+/* la grande ocupa 2x2 en desktop */
+.seg-lg { height: 260px; }
+@media (min-width: 900px) {
+  .seg-lg { grid-column: span 2; grid-row: span 2; height: 100%; }
+}
+
+/* ===== Banner full-width ===== */
+.banner-full {
+  position: relative;
+  width: 100vw;                 /* ocupa todo el ancho */
+  margin-left: calc(50% - 50vw);/* rompe el contenedor */
+  margin-right: calc(50% - 50vw);
+  margin-top: 16px; margin-bottom: 24px;
+}
+.banner-bg {
+  position: absolute; inset: 0;
+  background: center / cover no-repeat var(--img);
+  filter: saturate(1.05);
+}
+.banner-full::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.35));
+}
+.banner-content {
+  position: relative;
+  padding: 56px 16px;
+  color: #fff;
+}
+.banner-title { margin: 0 0 6px; font-size: 32px; font-weight: 800; }
+.banner-sub   { margin: 0 0 14px; font-size: 18px; color: #eef2ff; }
+@media (min-width: 900px) {
+  .banner-content { padding: 90px 16px; }
+  .banner-title { font-size: 40px; }
+  .banner-sub   { font-size: 20px; max-width: 720px; }
+}
