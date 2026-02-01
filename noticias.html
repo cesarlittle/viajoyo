@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Los mejores paquetes turisticos con vuelos, hoteles y excursiones incluidas. Ofertas para todos los destinos.">
-  <title>Paquetes Turisticos | Viajoyo</title>
+  <meta name="description" content="Las ultimas noticias del turismo en Argentina y el mundo. Tendencias, ofertas y novedades del sector.">
+  <title>Noticias de Turismo | Viajoyo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,10 +37,10 @@
         <a href="index.html" class="logo"><span>Viajoyo</span></a>
         <nav class="nav" id="mainNav">
           <a href="vuelos.html" class="nav__link">Vuelos Confirmados</a>
-          <a href="paquetes.html" class="nav__link nav__link--active">Paquetes</a>
+          <a href="paquetes.html" class="nav__link">Paquetes</a>
           <a href="asistencias.html" class="nav__link">Asistencias</a>
           <a href="actividades.html" class="nav__link">Actividades</a>
-          <a href="noticias.html" class="nav__link">Noticias</a>
+          <a href="noticias.html" class="nav__link nav__link--active">Noticias</a>
           <a href="index.html#contacto" class="nav__link nav__link--cta">Anunciar</a>
         </nav>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span>&#9776;</span></button>
@@ -48,34 +48,27 @@
     </div>
   </header>
 
-  <!-- Categories Filter -->
-  <section class="categories">
-    <div class="container">
-      <div class="categories__list" id="categoriesList"></div>
-    </div>
-  </section>
-
   <main>
     <section class="section section--white">
       <div class="container">
         <div class="section__header">
           <div>
-            <h1 class="section__title">Paquetes Turisticos</h1>
-            <p class="section__subtitle">Descubri los mejores destinos con todo incluido</p>
+            <h1 class="section__title">Noticias de Turismo</h1>
+            <p class="section__subtitle">Las ultimas novedades del mundo de los viajes - Por Alice Little</p>
           </div>
         </div>
 
         <!-- Ad Banner -->
-        <div class="ad-banner ad-banner--horizontal mb-4" style="background: linear-gradient(135deg, #00A699, #00796B);" onclick="trackAdClick('banner-paquetes-1')">
+        <div class="ad-banner ad-banner--horizontal mb-4" style="background: linear-gradient(135deg, #667eea, #764ba2);" onclick="trackAdClick('banner-noticias-1')">
           <span class="ad-banner__label">Publicidad</span>
           <div style="flex: 1;">
-            <h3 class="ad-banner__title">Espacio para Mayoristas</h3>
-            <p class="ad-banner__text">Publique sus paquetes y llegue a miles de viajeros</p>
+            <h3 class="ad-banner__title">Espacio Publicitario</h3>
+            <p class="ad-banner__text">Llegue a miles de lectores interesados en turismo</p>
           </div>
           <a href="index.html#contacto" class="ad-banner__cta">Consultar</a>
         </div>
 
-        <div class="packages-grid" id="allPackages">
+        <div class="news-grid" id="allNews">
           <div class="loading">
             <div class="loading__spinner"></div>
           </div>
@@ -83,18 +76,16 @@
       </div>
     </section>
 
-    <!-- Google Sheets Config for Agencies -->
+    <!-- Author Info -->
     <section class="section section--gray">
       <div class="container">
-        <div class="sheets-config">
-          <h3 class="sheets-config__title">Sos Agencia? Carga tus paquetes automaticamente</h3>
-          <p class="text-muted mb-2">Conecta tu Google Sheet para que tus paquetes se actualicen automaticamente en nuestro portal.</p>
-          <div class="sheets-config__input">
-            <input type="text" id="sheetsId" placeholder="ID de tu Google Sheet">
-            <button class="btn btn--primary" onclick="alert('Funcionalidad de Google Sheets - Contactenos para configurar')">Conectar</button>
-          </div>
-          <p class="sheets-config__help">
-            Formato requerido: slug, titulo, destino, noches, origen, precioARS, precioUSD, imagen, meses, incluye, descripcion, segmentos, badge
+        <div style="background: white; border-radius: 12px; padding: 32px; max-width: 600px; margin: 0 auto; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+          <div style="width: 80px; height: 80px; background: #FF5A5F; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; font-weight: 700; margin: 0 auto 16px;">AL</div>
+          <h3 style="margin: 0 0 8px;">Alice Little</h3>
+          <p style="color: #767676; margin: 0 0 16px;">Editora de Noticias de Turismo</p>
+          <p style="font-size: 14px; color: #484848; line-height: 1.6;">
+            Especialista en turismo con mas de 10 anos de experiencia cubriendo tendencias, destinos emergentes
+            y novedades del sector turistico en Argentina y el mundo.
           </p>
         </div>
       </div>
