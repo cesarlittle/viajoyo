@@ -1,0 +1,119 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "slug": "argentina-destino-mas-buscado-2025",
+      "title": "Argentina se posiciona como el destino mas buscado de Sudamerica en 2025",
+      "excerpt": "Segun un informe de la OMT, Argentina lidera las busquedas turisticas en la region gracias a la diversidad de paisajes y el tipo de cambio favorable.",
+      "content": "<p>La Organizacion Mundial del Turismo (OMT) publico su informe anual donde destaca que Argentina se ha convertido en el destino mas buscado de Sudamerica durante el primer trimestre de 2025.</p><p>Los factores que impulsan esta tendencia incluyen la diversidad de paisajes que ofrece el pais, desde las Cataratas del Iguazu hasta los glaciares patagonicos, pasando por la vibrante ciudad de Buenos Aires.</p><h2>Tipo de cambio favorable</h2><p>El tipo de cambio sigue siendo uno de los principales atractivos para turistas internacionales, especialmente aquellos provenientes de Estados Unidos y Europa.</p><p>Las provincias con mayor crecimiento en busquedas son Mendoza (+45%), Salta (+38%) y Tierra del Fuego (+52%).</p>",
+      "image": "https://images.unsplash.com/photo-1612294037637-ec328d0e075e?auto=format&fit=crop&w=1200&q=80",
+      "category": "Tendencias",
+      "author": "Alice Little",
+      "date": "2025-01-31",
+      "featured": true,
+      "tags": ["Argentina", "OMT", "Turismo 2025"]
+    },
+    {
+      "id": 2,
+      "slug": "nuevas-rutas-aereas-europa-2025",
+      "title": "Aerolineas anuncia 5 nuevas rutas directas a Europa desde Buenos Aires",
+      "excerpt": "La aerolinea de bandera sumara vuelos directos a Lisboa, Amsterdam, Zurich, Atenas y Estambul a partir de octubre de 2025.",
+      "content": "<p>Aerolineas Argentinas anuncio oficialmente la incorporacion de cinco nuevas rutas internacionales que conectaran Buenos Aires con importantes ciudades europeas.</p><p>Las nuevas rutas, que comenzaran a operar en octubre de 2025, son:</p><ul><li>Buenos Aires - Lisboa (3 frecuencias semanales)</li><li>Buenos Aires - Amsterdam (4 frecuencias semanales)</li><li>Buenos Aires - Zurich (2 frecuencias semanales)</li><li>Buenos Aires - Atenas (2 frecuencias semanales)</li><li>Buenos Aires - Estambul (3 frecuencias semanales)</li></ul><p>Esta expansion representa la mayor apuesta internacional de la compania en los ultimos 10 anos.</p>",
+      "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
+      "category": "Aerolineas",
+      "author": "Alice Little",
+      "date": "2025-01-30",
+      "featured": false,
+      "tags": ["Aerolineas", "Europa", "Vuelos"]
+    },
+    {
+      "id": 3,
+      "slug": "visa-estados-unidos-mas-rapida",
+      "title": "Estados Unidos acelera el proceso de visas para turistas argentinos",
+      "excerpt": "El tiempo de espera para la entrevista de visa B1/B2 se redujo a solo 15 dias, el mas bajo en los ultimos 5 anos.",
+      "content": "<p>La Embajada de Estados Unidos en Buenos Aires confirmo que los tiempos de espera para obtener una cita de visa turistica se han reducido significativamente.</p><p>Actualmente, los solicitantes de visa B1/B2 pueden conseguir una cita en aproximadamente 15 dias, comparado con los 90 dias de espera que se registraban hace un ano.</p><h2>Recomendaciones para aplicar</h2><p>Los expertos recomiendan tener toda la documentacion lista antes de agendar la cita, incluyendo comprobantes de empleo, extractos bancarios y carta de invitacion si corresponde.</p>",
+      "image": "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1200&q=80",
+      "category": "Visas",
+      "author": "Alice Little",
+      "date": "2025-01-30",
+      "featured": false,
+      "tags": ["Visa USA", "Tramites", "Estados Unidos"]
+    },
+    {
+      "id": 4,
+      "slug": "carnaval-rio-2025-fechas-consejos",
+      "title": "Carnaval de Rio 2025: fechas, precios y consejos para viajeros argentinos",
+      "excerpt": "Todo lo que necesitas saber para disfrutar del mayor espectaculo del mundo. Hoteles desde USD 80 por noche.",
+      "content": "<p>El Carnaval de Rio de Janeiro 2025 se llevara a cabo del 28 de febrero al 5 de marzo, y ya hay ofertas especiales para viajeros argentinos.</p><p>Los desfiles principales en el Sambodromo seran los dias 2 y 3 de marzo, con entradas que van desde R$ 150 hasta R$ 3.000 para los sectores premium.</p><h2>Opciones de alojamiento</h2><p>Copacabana e Ipanema son las zonas mas buscadas, con precios promedio de USD 120 por noche. Sin embargo, barrios como Lapa y Centro ofrecen alternativas desde USD 80.</p>",
+      "image": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=1200&q=80",
+      "category": "Eventos",
+      "author": "Alice Little",
+      "date": "2025-01-29",
+      "featured": true,
+      "tags": ["Carnaval", "Rio de Janeiro", "Brasil"]
+    },
+    {
+      "id": 5,
+      "slug": "temporada-esqui-patagonia-2025",
+      "title": "Temporada de esqui 2025: Bariloche y Las Lenas anuncian mejoras millonarias",
+      "excerpt": "Nuevos medios de elevacion, pistas renovadas y hoteles con tarifas promocionales para la proxima temporada invernal.",
+      "content": "<p>Los principales centros de esqui de Argentina anunciaron inversiones millonarias para la temporada 2025.</p><p>Cerro Catedral en Bariloche inaugurara dos nuevos medios de elevacion de ultima generacion, reduciendo los tiempos de espera en un 40%.</p><h2>Las Lenas: renovacion total</h2><p>Por su parte, Las Lenas en Mendoza completo la renovacion de su hotel principal y amplio el snowpark para riders avanzados.</p><p>Las tarifas early booking ofrecen hasta 30% de descuento para reservas antes del 30 de abril.</p>",
+      "image": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=1200&q=80",
+      "category": "Deportes",
+      "author": "Alice Little",
+      "date": "2025-01-29",
+      "featured": false,
+      "tags": ["Esqui", "Bariloche", "Las Lenas", "Invierno"]
+    },
+    {
+      "id": 6,
+      "slug": "cruceros-antartida-temporada-record",
+      "title": "Cruceros a la Antartida registran temporada record con 80% de ocupacion",
+      "excerpt": "El turismo antartico desde Ushuaia crece un 25% respecto al ano anterior, con mas de 100.000 visitantes esperados.",
+      "content": "<p>La temporada de cruceros antarticos 2024-2025 esta marcando records historicos, con una ocupacion del 80% en todas las navieras que operan desde Ushuaia.</p><p>Se estima que mas de 100.000 turistas visitaran el continente blanco durante esta temporada, un aumento del 25% respecto al periodo anterior.</p><h2>Precios y opciones</h2><p>Los cruceros de 10 dias tienen precios desde USD 6.500 por persona, mientras que las expediciones premium pueden superar los USD 15.000.</p>",
+      "image": "https://images.unsplash.com/photo-1551415923-a2297c7fda79?auto=format&fit=crop&w=1200&q=80",
+      "category": "Cruceros",
+      "author": "Alice Little",
+      "date": "2025-01-28",
+      "featured": false,
+      "tags": ["Antartida", "Cruceros", "Ushuaia"]
+    },
+    {
+      "id": 7,
+      "slug": "mendoza-enoturismo-record-visitas",
+      "title": "Mendoza bate record de visitantes en sus rutas del vino",
+      "excerpt": "Mas de 2 millones de turistas recorrieron las bodegas mendocinas en 2024, consolidando a la provincia como capital del enoturismo.",
+      "content": "<p>La provincia de Mendoza cerro 2024 con un record historico de 2.1 millones de visitantes en sus circuitos enoturisticos.</p><p>El Valle de Uco fue la zona con mayor crecimiento, duplicando la cantidad de turistas respecto a 2023.</p><h2>Nuevas experiencias</h2><p>Las bodegas han incorporado experiencias innovadoras como cenas entre vinedos, yoga entre barricas y tours nocturnos con observacion de estrellas.</p>",
+      "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+      "category": "Enoturismo",
+      "author": "Alice Little",
+      "date": "2025-01-28",
+      "featured": false,
+      "tags": ["Mendoza", "Vino", "Enoturismo"]
+    },
+    {
+      "id": 8,
+      "slug": "semana-santa-2025-destinos-recomendados",
+      "title": "Semana Santa 2025: los 10 destinos mas recomendados para escaparse",
+      "excerpt": "Desde playas paradisiacas hasta ciudades historicas, te contamos donde viajar durante el feriado largo de abril.",
+      "content": "<p>Semana Santa 2025 cae del 17 al 21 de abril, ofreciendo un feriado largo ideal para planificar una escapada.</p><p>Estos son los destinos mas recomendados:</p><ul><li>Salta y Jujuy - ideal para el clima templado</li><li>Cordoba - sierras y gastronomia</li><li>Colonia del Sacramento - escapada internacional cercana</li><li>Puerto Iguazu - cataratas sin el calor extremo</li><li>Bariloche - otono patagonico</li></ul>",
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
+      "category": "Guias",
+      "author": "Alice Little",
+      "date": "2025-01-27",
+      "featured": false,
+      "tags": ["Semana Santa", "Feriados", "Destinos"]
+    }
+  ],
+  "categories": [
+    "Tendencias",
+    "Aerolineas",
+    "Visas",
+    "Eventos",
+    "Deportes",
+    "Cruceros",
+    "Enoturismo",
+    "Guias",
+    "Ofertas"
+  ]
+}

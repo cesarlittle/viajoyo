@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Los mejores paquetes turisticos con vuelos, hoteles y excursiones incluidas. Ofertas para todos los destinos.">
-  <title>Paquetes Turisticos | Viajoyo</title>
+  <meta name="description" content="Vuelos confirmados con tarifas verificadas. Encuentra los mejores precios en vuelos desde Buenos Aires.">
+  <title>Vuelos Confirmados | Viajoyo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,8 +36,8 @@
       <div class="container header__inner">
         <a href="index.html" class="logo"><span>Viajoyo</span></a>
         <nav class="nav" id="mainNav">
-          <a href="vuelos.html" class="nav__link">Vuelos Confirmados</a>
-          <a href="paquetes.html" class="nav__link nav__link--active">Paquetes</a>
+          <a href="vuelos.html" class="nav__link nav__link--active">Vuelos Confirmados</a>
+          <a href="paquetes.html" class="nav__link">Paquetes</a>
           <a href="asistencias.html" class="nav__link">Asistencias</a>
           <a href="actividades.html" class="nav__link">Actividades</a>
           <a href="noticias.html" class="nav__link">Noticias</a>
@@ -48,34 +48,27 @@
     </div>
   </header>
 
-  <!-- Categories Filter -->
-  <section class="categories">
-    <div class="container">
-      <div class="categories__list" id="categoriesList"></div>
-    </div>
-  </section>
-
   <main>
     <section class="section section--white">
       <div class="container">
         <div class="section__header">
           <div>
-            <h1 class="section__title">Paquetes Turisticos</h1>
-            <p class="section__subtitle">Descubri los mejores destinos con todo incluido</p>
+            <h1 class="section__title">Vuelos Confirmados</h1>
+            <p class="section__subtitle">Tarifas verificadas y disponibles. Precios actualizados diariamente.</p>
           </div>
         </div>
 
         <!-- Ad Banner -->
-        <div class="ad-banner ad-banner--horizontal mb-4" style="background: linear-gradient(135deg, #00A699, #00796B);" onclick="trackAdClick('banner-paquetes-1')">
+        <div class="ad-banner ad-banner--horizontal mb-4" style="background: linear-gradient(135deg, #667eea, #764ba2);" onclick="trackAdClick('banner-vuelos-1')">
           <span class="ad-banner__label">Publicidad</span>
           <div style="flex: 1;">
-            <h3 class="ad-banner__title">Espacio para Mayoristas</h3>
-            <p class="ad-banner__text">Publique sus paquetes y llegue a miles de viajeros</p>
+            <h3 class="ad-banner__title">Espacio para Aerolineas</h3>
+            <p class="ad-banner__text">Promocione sus vuelos y ofertas especiales</p>
           </div>
           <a href="index.html#contacto" class="ad-banner__cta">Consultar</a>
         </div>
 
-        <div class="packages-grid" id="allPackages">
+        <div class="flights-grid" id="allFlights">
           <div class="loading">
             <div class="loading__spinner"></div>
           </div>
@@ -83,20 +76,12 @@
       </div>
     </section>
 
-    <!-- Google Sheets Config for Agencies -->
-    <section class="section section--gray">
-      <div class="container">
-        <div class="sheets-config">
-          <h3 class="sheets-config__title">Sos Agencia? Carga tus paquetes automaticamente</h3>
-          <p class="text-muted mb-2">Conecta tu Google Sheet para que tus paquetes se actualicen automaticamente en nuestro portal.</p>
-          <div class="sheets-config__input">
-            <input type="text" id="sheetsId" placeholder="ID de tu Google Sheet">
-            <button class="btn btn--primary" onclick="alert('Funcionalidad de Google Sheets - Contactenos para configurar')">Conectar</button>
-          </div>
-          <p class="sheets-config__help">
-            Formato requerido: slug, titulo, destino, noches, origen, precioARS, precioUSD, imagen, meses, incluye, descripcion, segmentos, badge
-          </p>
-        </div>
+    <!-- CTA -->
+    <section class="section" style="background: linear-gradient(135deg, #FF5A5F, #FC642D); color: white;">
+      <div class="container text-center">
+        <h2 style="font-size: 28px; margin-bottom: 12px;">No encontras el vuelo que buscas?</h2>
+        <p style="font-size: 16px; opacity: 0.95; margin-bottom: 20px;">Contactanos y te ayudamos a encontrar la mejor opcion para tu viaje</p>
+        <a href="mailto:info@viajoyo.com" class="btn" style="background: white; color: #FF5A5F;">Contactar</a>
       </div>
     </section>
   </main>

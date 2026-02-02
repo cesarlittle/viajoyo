@@ -1,124 +1,355 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Viajoyo</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Viajoyo - Portal de noticias turisticas y las mejores ofertas en paquetes de viajes. Vuelos confirmados, asistencias y actividades.">
+  <meta name="keywords" content="viajes, turismo, paquetes, vuelos, hoteles, ofertas, argentina, noticias turismo">
+  <meta name="author" content="Viajoyo">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Viajoyo - Noticias de Turismo y Ofertas de Viajes">
+  <meta property="og:description" content="Las mejores ofertas en paquetes turisticos, vuelos confirmados y noticias del mundo del turismo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://viajoyo.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80">
+
+  <title>Viajoyo - Noticias de Turismo y Ofertas de Viajes</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Google Analytics - Replace GA_MEASUREMENT_ID with your actual ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <div class="logo">Viajoyo</div>
-      <nav class="menu">
-        <a href="#">Paquetes</a>
-        <a href="#">Categorías</a>
-        <a href="#">Contacto</a>
-      </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__top">
+      <div class="container header__top-inner">
+        <div class="header__contact">
+          <a href="tel:+5491155551234">+54 11 5555-1234</a>
+          <a href="mailto:info@viajoyo.com">info@viajoyo.com</a>
+        </div>
+        <div class="header__social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+        </div>
+      </div>
+    </div>
+    <div class="header__main">
+      <div class="container header__inner">
+        <a href="index.html" class="logo">
+          <span>Viajoyo</span>
+        </a>
+        <nav class="nav" id="mainNav">
+          <a href="vuelos.html" class="nav__link">Vuelos Confirmados</a>
+          <a href="paquetes.html" class="nav__link">Paquetes</a>
+          <a href="asistencias.html" class="nav__link">Asistencias</a>
+          <a href="actividades.html" class="nav__link">Actividades</a>
+          <a href="noticias.html" class="nav__link">Noticias</a>
+          <a href="#contacto" class="nav__link nav__link--cta">Anunciar</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span>&#9776;</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-  <!-- HERO con imagen de fondo -->
-  <section class="hero" aria-label="Portada">
-    <div class="hero__bg"></div>
-    <div class="container hero__content">
-      <div class="search-card">
-        <h1 class="search-title">Descubrí tu próximo destino</h1>
-        <p class="search-sub">Los mejores paquetes al mejor precio</p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">Tu proxima aventura comienza aqui</h1>
+        <p class="hero__subtitle">Las mejores ofertas en paquetes turisticos, vuelos y experiencias unicas</p>
 
-        <form id="searchForm" class="search-grid" novalidate>
-          <label class="field">
-            <span class="label">Origen</span>
-            <input id="origin" name="origin" type="text" placeholder="Buenos Aires" required />
-          </label>
-
-          <label class="field">
-            <span class="label">Destino</span>
-            <input id="destination" name="destination" type="text" placeholder="Madrid, Iguazú, Caribe…" required />
-          </label>
-
-          <label class="field">
-            <span class="label">Mes de salida</span>
-            <input id="month" name="month" type="month" required />
-          </label>
-
-          <div class="actions">
-            <button type="submit" class="btn">Buscar</button>
-            <button type="button" id="resetBtn" class="btn secondary">Limpiar</button>
+        <div class="search-box">
+          <div class="search-tabs">
+            <button class="search-tab search-tab--active" data-tab="paquetes">Paquetes</button>
+            <button class="search-tab" data-tab="vuelos">Vuelos</button>
+            <button class="search-tab" data-tab="hoteles">Hoteles</button>
+          </div>
+          <form class="search-form" id="searchForm">
+            <div class="form-group">
+              <label for="origin">Origen</label>
+              <input type="text" id="origin" name="origin" placeholder="Buenos Aires">
             </div>
+            <div class="form-group">
+              <label for="destination">Destino</label>
+              <input type="text" id="destination" name="destination" placeholder="A donde queres ir?">
+            </div>
+            <div class="form-group">
+              <label for="dates">Fecha</label>
+              <input type="month" id="dates" name="dates">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn--primary btn--full">Buscar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
 
-        </form>
+    <!-- Categories -->
+    <section class="categories">
+      <div class="container">
+        <div class="categories__list" id="categoriesList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured News -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Noticias de Turismo</h2>
+            <p class="section__subtitle">Las ultimas novedades del mundo de los viajes</p>
+          </div>
+          <a href="noticias.html" class="section__link">Ver todas las noticias &rarr;</a>
+        </div>
+
+        <div class="news-featured" id="featuredNews">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad Banner -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="ad-banner ad-banner--full" id="adBanner1" onclick="trackAdClick('banner-home-1')">
+          <span class="ad-banner__label">Publicidad</span>
+          <div class="ad-banner__logo">Tu Agencia Aqui</div>
+          <h3 class="ad-banner__title">Espacio Publicitario Premium</h3>
+          <p class="ad-banner__text">Llegue a miles de viajeros interesados. Consulte nuestros planes de publicidad para agencias y mayoristas.</p>
+          <a href="#contacto" class="ad-banner__cta">Consultar Tarifas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Packages -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Ofertas Destacadas</h2>
+            <p class="section__subtitle">Los mejores paquetes al mejor precio</p>
+          </div>
+          <a href="paquetes.html" class="section__link">Ver todos los paquetes &rarr;</a>
+        </div>
+
+        <div class="packages-grid" id="featuredPackages">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Flights Section -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Vuelos Confirmados</h2>
+            <p class="section__subtitle">Tarifas verificadas y disponibles</p>
+          </div>
+          <a href="vuelos.html" class="section__link">Ver todos los vuelos &rarr;</a>
+        </div>
+
+        <div class="flights-grid" id="featuredFlights">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Second Ad Banner -->
+    <section class="section section--white">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          <div class="ad-banner ad-banner--vertical" style="background: linear-gradient(135deg, #00A699, #00796B);" onclick="trackAdClick('banner-home-2')">
+            <span class="ad-banner__label">Publicidad</span>
+            <div class="ad-banner__logo">Mayorista</div>
+            <h3 class="ad-banner__title">Espacio Disponible</h3>
+            <p class="ad-banner__text">Ideal para mayoristas de turismo</p>
+            <a href="#contacto" class="ad-banner__cta">Consultar</a>
+          </div>
+          <div class="ad-banner ad-banner--vertical" style="background: linear-gradient(135deg, #667eea, #764ba2);" onclick="trackAdClick('banner-home-3')">
+            <span class="ad-banner__label">Publicidad</span>
+            <div class="ad-banner__logo">Agencia</div>
+            <h3 class="ad-banner__title">Tu Marca Aqui</h3>
+            <p class="ad-banner__text">Llegue a viajeros interesados</p>
+            <a href="#contacto" class="ad-banner__cta">Consultar</a>
+          </div>
+          <div class="ad-banner ad-banner--vertical" style="background: linear-gradient(135deg, #f093fb, #f5576c);" onclick="trackAdClick('banner-home-4')">
+            <span class="ad-banner__label">Publicidad</span>
+            <div class="ad-banner__logo">Destino</div>
+            <h3 class="ad-banner__title">Promocione su Destino</h3>
+            <p class="ad-banner__text">Oficinas de turismo bienvenidas</p>
+            <a href="#contacto" class="ad-banner__cta">Consultar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Actividades Populares</h2>
+            <p class="section__subtitle">Experiencias unicas en cada destino</p>
+          </div>
+          <a href="actividades.html" class="section__link">Ver todas las actividades &rarr;</a>
+        </div>
+
+        <div class="activities-grid" id="featuredActivities">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- More News -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Ultimas Noticias</h2>
+          </div>
+          <a href="noticias.html" class="section__link">Ver todas &rarr;</a>
+        </div>
+
+        <div class="news-grid" id="latestNews">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Assistance Section -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <h2 class="section__title">Asistencia al Viajero</h2>
+            <p class="section__subtitle">Viaja protegido con las mejores coberturas</p>
+          </div>
+          <a href="asistencias.html" class="section__link">Comparar planes &rarr;</a>
+        </div>
+
+        <div class="assistance-grid" id="featuredAssistance">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section section--white" id="contacto">
+      <div class="container">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <h2 class="section__title mb-2">Recibe las Mejores Ofertas</h2>
+          <p class="text-muted mb-3">Suscribite a nuestro newsletter y recibe ofertas exclusivas en tu email</p>
+          <form class="footer__newsletter" style="max-width: 400px; margin: 0 auto;">
+            <input type="email" placeholder="Tu email" required>
+            <button type="submit">Suscribir</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advertiser CTA -->
+    <section class="section" style="background: linear-gradient(135deg, #FF5A5F, #FC642D); color: white;">
+      <div class="container text-center">
+        <h2 style="font-size: 32px; margin-bottom: 16px;">Sos Agencia o Mayorista?</h2>
+        <p style="font-size: 18px; opacity: 0.95; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Llegue a miles de viajeros interesados publicando sus ofertas en Viajoyo.
+          Espacios publicitarios premium y gestion de paquetes via JSON o Google Sheets.
+        </p>
+        <a href="mailto:publicidad@viajoyo.com" class="btn" style="background: white; color: #FF5A5F; padding: 14px 32px; font-size: 16px;">
+          Solicitar Informacion Comercial
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Viajoyo</div>
+          <p class="footer__desc">
+            El portal de noticias turisticas mas completo de Argentina.
+            Ofertas en paquetes, vuelos confirmados, asistencias y actividades.
+          </p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Secciones</h4>
+          <div class="footer__links">
+            <a href="vuelos.html" class="footer__link">Vuelos Confirmados</a>
+            <a href="paquetes.html" class="footer__link">Paquetes</a>
+            <a href="asistencias.html" class="footer__link">Asistencias</a>
+            <a href="actividades.html" class="footer__link">Actividades</a>
+            <a href="noticias.html" class="footer__link">Noticias</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Categorias</h4>
+          <div class="footer__links">
+            <a href="paquetes.html?categoria=verano" class="footer__link">Verano</a>
+            <a href="paquetes.html?categoria=invierno" class="footer__link">Invierno</a>
+            <a href="paquetes.html?categoria=playas" class="footer__link">Playas</a>
+            <a href="paquetes.html?categoria=patagonia" class="footer__link">Patagonia</a>
+            <a href="paquetes.html?categoria=escapadas" class="footer__link">Escapadas</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Contacto</h4>
+          <div class="footer__links">
+            <span class="footer__link">+54 11 5555-1234</span>
+            <span class="footer__link">info@viajoyo.com</span>
+            <span class="footer__link">publicidad@viajoyo.com</span>
+            <a href="#" class="footer__link">Terminos y Condiciones</a>
+            <a href="#" class="footer__link">Politica de Privacidad</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 Viajoyo. Todos los derechos reservados.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Legales</a>
+          <a href="#">Defensa al Consumidor</a>
+          <a href="#">Arrepentimiento</a>
+        </div>
       </div>
     </div>
-  </section>
-    <!-- Grilla de paquetes -->
-    <section class="container paquetes" id="paquetes">
-  <h2 class="paquetes-title">Paquetes recomendados</h2>
+  </footer>
 
-  <div class="carousel">
-    <button class="car-btn prev" id="prevBtn" aria-label="Anterior">‹</button>
-
-    <!-- NUEVO: el que scrollea es este -->
-    <div class="car-track" id="carTrack">
-      <div class="grid" id="grid"></div>
-    </div>
-
-    <button class="car-btn next" id="nextBtn" aria-label="Siguiente">›</button>
-  </div>
-
-  <!-- BANNER FULL-WIDTH -->
-<section class="banner-full">
-  <div class="banner-bg" style="--img:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=2000&auto=format&fit=crop')"></div>
-  <div class="banner-content container">
-    <h3 class="banner-title">Viajá con Viajoyo</h3>
-    <p class="banner-sub">Explorá destinos únicos, viví experiencias inolvidables y viajá sin preocupaciones.</p>
-    <a class="btn" href="#paquetes">Ver ofertas</a>
-  </div>
-</section> 
-  
-  <!-- SEGMENTACIÓN -->
-<!-- SEGMENTACIÓN -->
-<section class="container segmentos">
-  <div class="seg-grid">
-    <!-- grande -->
-    <a class="seg-card seg-lg"
-       style="--img: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop')"
-       href="paquetes.html?segment=verano">
-      <span>Verano</span>
-    </a>
-
-    <!-- chicas -->
-    <a class="seg-card"
-       style="--img: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop')"
-       href="paquetes.html?segment=playas">
-      <span>Playas</span>
-    </a>
-
-    <a class="seg-card"
-       style="--img: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop')"
-       href="paquetes.html?segment=exoticos">
-      <span>Exóticos</span>
-    </a>
-
-    <a class="seg-card"
-       style="--img: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop')"
-       href="paquetes.html?segment=escapadas">
-      <span>Escapadas</span>
-    </a>
-
-    <a class="seg-card"
-       style="--img: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop')"
-       href="paquetes.html?segment=grupales">
-      <span>Grupales</span>
-    </a>
-  </div>
-</section>
-
-</main>
-
-  <script src="js/data.js?v=6"></script>
+  <!-- Scripts -->
   <script src="js/app.js"></script>
-
 </body>
 </html>

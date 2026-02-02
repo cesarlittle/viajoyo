@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Los mejores paquetes turisticos con vuelos, hoteles y excursiones incluidas. Ofertas para todos los destinos.">
-  <title>Paquetes Turisticos | Viajoyo</title>
+  <meta name="description" content="Noticia de turismo en Viajoyo">
+  <title>Noticia | Viajoyo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
         <a href="index.html" class="logo"><span>Viajoyo</span></a>
         <nav class="nav" id="mainNav">
           <a href="vuelos.html" class="nav__link">Vuelos Confirmados</a>
-          <a href="paquetes.html" class="nav__link nav__link--active">Paquetes</a>
+          <a href="paquetes.html" class="nav__link">Paquetes</a>
           <a href="asistencias.html" class="nav__link">Asistencias</a>
           <a href="actividades.html" class="nav__link">Actividades</a>
           <a href="noticias.html" class="nav__link">Noticias</a>
@@ -48,54 +48,25 @@
     </div>
   </header>
 
-  <!-- Categories Filter -->
-  <section class="categories">
-    <div class="container">
-      <div class="categories__list" id="categoriesList"></div>
-    </div>
-  </section>
-
   <main>
     <section class="section section--white">
-      <div class="container">
-        <div class="section__header">
-          <div>
-            <h1 class="section__title">Paquetes Turisticos</h1>
-            <p class="section__subtitle">Descubri los mejores destinos con todo incluido</p>
-          </div>
-        </div>
-
-        <!-- Ad Banner -->
-        <div class="ad-banner ad-banner--horizontal mb-4" style="background: linear-gradient(135deg, #00A699, #00796B);" onclick="trackAdClick('banner-paquetes-1')">
-          <span class="ad-banner__label">Publicidad</span>
-          <div style="flex: 1;">
-            <h3 class="ad-banner__title">Espacio para Mayoristas</h3>
-            <p class="ad-banner__text">Publique sus paquetes y llegue a miles de viajeros</p>
-          </div>
-          <a href="index.html#contacto" class="ad-banner__cta">Consultar</a>
-        </div>
-
-        <div class="packages-grid" id="allPackages">
-          <div class="loading">
-            <div class="loading__spinner"></div>
-          </div>
+      <div class="container" id="newsArticle">
+        <div class="loading">
+          <div class="loading__spinner"></div>
         </div>
       </div>
     </section>
 
-    <!-- Google Sheets Config for Agencies -->
+    <!-- Related News Ad -->
     <section class="section section--gray">
       <div class="container">
-        <div class="sheets-config">
-          <h3 class="sheets-config__title">Sos Agencia? Carga tus paquetes automaticamente</h3>
-          <p class="text-muted mb-2">Conecta tu Google Sheet para que tus paquetes se actualicen automaticamente en nuestro portal.</p>
-          <div class="sheets-config__input">
-            <input type="text" id="sheetsId" placeholder="ID de tu Google Sheet">
-            <button class="btn btn--primary" onclick="alert('Funcionalidad de Google Sheets - Contactenos para configurar')">Conectar</button>
+        <div class="ad-banner ad-banner--horizontal" style="background: linear-gradient(135deg, #00A699, #00796B);" onclick="trackAdClick('banner-noticia-related')">
+          <span class="ad-banner__label">Publicidad</span>
+          <div style="flex: 1;">
+            <h3 class="ad-banner__title">Espacio para Agencias</h3>
+            <p class="ad-banner__text">Llegue a lectores interesados en turismo</p>
           </div>
-          <p class="sheets-config__help">
-            Formato requerido: slug, titulo, destino, noches, origen, precioARS, precioUSD, imagen, meses, incluye, descripcion, segmentos, badge
-          </p>
+          <a href="index.html#contacto" class="ad-banner__cta">Consultar</a>
         </div>
       </div>
     </section>

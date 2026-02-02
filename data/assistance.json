@@ -1,0 +1,70 @@
+{
+  "assistance": [
+    {
+      "id": 1,
+      "name": "Assist Card Basico",
+      "coverage": "USD 35.000",
+      "pricePerDay": 8,
+      "features": [
+        "Asistencia medica por accidente o enfermedad",
+        "Medicamentos ambulatorios",
+        "Odontologia de urgencia",
+        "Traslado sanitario",
+        "Repatriacion sanitaria"
+      ],
+      "regions": ["Sudamerica"],
+      "featured": false
+    },
+    {
+      "id": 2,
+      "name": "Assist Card Plus",
+      "coverage": "USD 60.000",
+      "pricePerDay": 15,
+      "features": [
+        "Asistencia medica por accidente o enfermedad",
+        "Medicamentos ambulatorios",
+        "Odontologia de urgencia",
+        "Traslado sanitario",
+        "Repatriacion sanitaria",
+        "Cobertura COVID-19",
+        "Perdida de equipaje USD 1.200",
+        "Cancelacion de viaje"
+      ],
+      "regions": ["Mundo"],
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Universal Assistance Premium",
+      "coverage": "USD 100.000",
+      "pricePerDay": 22,
+      "features": [
+        "Asistencia medica ilimitada",
+        "Preexistencias hasta 70 anos",
+        "Deportes de aventura",
+        "Cobertura COVID-19",
+        "Perdida de equipaje USD 2.500",
+        "Cancelacion de viaje USD 3.000",
+        "Asistencia legal"
+      ],
+      "regions": ["Mundo"],
+      "featured": false
+    },
+    {
+      "id": 4,
+      "name": "Travel Ace Gold",
+      "coverage": "USD 50.000",
+      "pricePerDay": 12,
+      "features": [
+        "Asistencia medica por accidente o enfermedad",
+        "Medicamentos ambulatorios",
+        "Odontologia de urgencia",
+        "Traslado sanitario",
+        "Cobertura COVID-19",
+        "Demora de equipaje"
+      ],
+      "regions": ["Mundo"],
+      "featured": false
+    }
+  ]
+}
