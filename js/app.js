@@ -14,31 +14,80 @@ let flightsData = { flights: [] };
 let activitiesData = { activities: [] };
 let assistanceData = { assistance: [] };
 
-// Google Sheets Configuration
-const SHEETS_CONFIG = {
-  enabled: false,
-  spreadsheetId: '',
-  apiKey: ''
-};
+// Google Apps Script URL for packages
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbziIgDvHMen1FR__wfFphXVZiN9q0o5uZ2tMQhbI9zNaTiun3Zs6SWXytAXiTJLcxAIyA/exec';
+
+// Visual Segments Configuration
+const VISUAL_SEGMENTS = [
+  { id: 'verano', name: 'Verano', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80' },
+  { id: 'playas', name: 'Playas', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80' },
+  { id: 'exoticos', name: 'Exoticos', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80' },
+  { id: 'escapadas', name: 'Escapadas', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80' },
+  { id: 'grupales', name: 'Grupales', image: 'https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=600&q=80' }
+];
 
 // ============================================
 // DATA LOADING
 // ============================================
 
 /**
+ * Load packages from Google Apps Script
+ */
+async function loadPackagesFromScript() {
+  try {
+    const response = await fetch(GOOGLE_SCRIPT_URL);
+    if (response.ok) {
+      const data = await response.json();
+      if (data && Array.isArray(data)) {
+        packagesData.packages = data.map((pkg, index) => ({
+          id: index + 1,
+          slug: pkg.slug || pkg.titulo?.toLowerCase().replace(/\s+/g, '-') || `paquete-${index}`,
+          title: pkg.titulo || pkg.title || '',
+          destination: pkg.destino || pkg.destination || '',
+          nights: parseInt(pkg.noches || pkg.nights) || 0,
+          origin: pkg.origen || pkg.origin || 'Buenos Aires',
+          priceARS: parseInt(pkg.precioARS || pkg.priceARS) || 0,
+          priceUSD: parseInt(pkg.precioUSD || pkg.priceUSD) || 0,
+          image: pkg.imagen || pkg.image || '',
+          months: pkg.meses ? (Array.isArray(pkg.meses) ? pkg.meses : pkg.meses.split(',').map(m => m.trim())) : [],
+          includes: pkg.incluye ? (Array.isArray(pkg.incluye) ? pkg.incluye : pkg.incluye.split(',').map(i => i.trim())) : [],
+          description: pkg.descripcion || pkg.description || '',
+          segments: pkg.segmentos ? (Array.isArray(pkg.segmentos) ? pkg.segmentos : pkg.segmentos.split(',').map(s => s.trim())) : [],
+          badge: pkg.badge || null,
+          featured: pkg.destacado === true || pkg.featured === true || pkg.destacado === 'si'
+        }));
+        console.log('Loaded', packagesData.packages.length, 'packages from Google Script');
+        return true;
+      }
+    }
+  } catch (error) {
+    console.error('Error loading from Google Script:', error);
+  }
+  return false;
+}
+
+/**
  * Load data from JSON files
  */
 async function loadData() {
   try {
-    const [packages, news, flights, activities, assistance] = await Promise.all([
-      fetch('data/packages.json').then(r => r.ok ? r.json() : { packages: [], segments: [] }),
+    // Try loading packages from Google Script first
+    const scriptLoaded = await loadPackagesFromScript();
+
+    // Load other data from JSON files
+    const [news, flights, activities, assistance] = await Promise.all([
       fetch('data/news.json').then(r => r.ok ? r.json() : { news: [], categories: [] }),
       fetch('data/flights.json').then(r => r.ok ? r.json() : { flights: [] }),
       fetch('data/activities.json').then(r => r.ok ? r.json() : { activities: [] }),
       fetch('data/assistance.json').then(r => r.ok ? r.json() : { assistance: [] })
     ]);
 
-    packagesData = packages;
+    // If Google Script failed, load packages from local JSON
+    if (!scriptLoaded) {
+      const packagesLocal = await fetch('data/packages.json').then(r => r.ok ? r.json() : { packages: [], segments: [] });
+      packagesData = packagesLocal;
+    }
+
     newsData = news;
     flightsData = flights;
     activitiesData = activities;
@@ -204,6 +253,23 @@ function renderCategories() {
 function getActiveCategory() {
   const params = new URLSearchParams(window.location.search);
   return params.get('categoria') || '';
+}
+
+/**
+ * Render visual segments grid (like the image grid)
+ */
+function renderVisualSegments() {
+  const container = document.getElementById('visualSegments');
+  if (!container) return;
+
+  container.innerHTML = VISUAL_SEGMENTS.map(segment => `
+    <a href="paquetes.html?categoria=${segment.id}" class="segment-card">
+      <img src="${segment.image}" alt="${segment.name}" loading="lazy">
+      <div class="segment-card__overlay">
+        <span class="segment-card__title">${segment.name}</span>
+      </div>
+    </a>
+  `).join('');
 }
 
 /**
@@ -640,6 +706,13 @@ function renderNewsArticle() {
       <div class="article__tags">
         ${article.tags.map(tag => `<a href="noticias.html?tag=${encodeURIComponent(tag)}" class="article__tag">${tag}</a>`).join('')}
       </div>
+
+      ${article.source ? `
+      <div class="article__source">
+        <strong>Fuente:</strong>
+        ${article.sourceUrl ? `<a href="${article.sourceUrl}" target="_blank" rel="noopener noreferrer">${article.source}</a>` : article.source}
+      </div>
+      ` : ''}
     </article>
   `;
 }
@@ -818,6 +891,7 @@ async function init() {
   switch (page) {
     case 'index.html':
     case '':
+      renderVisualSegments();
       renderFeaturedNews();
       renderLatestNews();
       renderFeaturedPackages();
