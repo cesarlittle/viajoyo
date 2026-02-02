@@ -106,21 +106,12 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--primary);
 }
 
-.logo img {
-  height: 40px;
+.logo__img {
+  height: 45px;
   width: auto;
-}
-
-.logo span {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  object-fit: contain;
 }
 
 /* Navigation */
@@ -1298,13 +1289,13 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 }
 
 .footer__brand {
-  font-size: 28px;
-  font-weight: 800;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+}
+
+.footer__logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer__desc {
