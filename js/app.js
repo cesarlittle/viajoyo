@@ -14,12 +14,14 @@ let flightsData = { flights: [] };
 let activitiesData = { activities: [] };
 let assistanceData = { assistance: [] };
 
-// Google Sheets Configuration
-const SHEETS_CONFIG = {
-  enabled: false,
-  spreadsheetId: '',
-  apiKey: ''
-};
+// Visual Segments Configuration
+const VISUAL_SEGMENTS = [
+  { id: 'verano', name: 'Verano', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80' },
+  { id: 'playas', name: 'Playas', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80' },
+  { id: 'exoticos', name: 'Exoticos', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80' },
+  { id: 'escapadas', name: 'Escapadas', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80' },
+  { id: 'grupales', name: 'Grupales', image: 'https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=600&q=80' }
+];
 
 // ============================================
 // DATA LOADING
@@ -30,6 +32,7 @@ const SHEETS_CONFIG = {
  */
 async function loadData() {
   try {
+    // Load all data from local JSON files
     const [packages, news, flights, activities, assistance] = await Promise.all([
       fetch('data/packages.json').then(r => r.ok ? r.json() : { packages: [], segments: [] }),
       fetch('data/news.json').then(r => r.ok ? r.json() : { news: [], categories: [] }),
@@ -204,6 +207,23 @@ function renderCategories() {
 function getActiveCategory() {
   const params = new URLSearchParams(window.location.search);
   return params.get('categoria') || '';
+}
+
+/**
+ * Render visual segments grid (like the image grid)
+ */
+function renderVisualSegments() {
+  const container = document.getElementById('visualSegments');
+  if (!container) return;
+
+  container.innerHTML = VISUAL_SEGMENTS.map(segment => `
+    <a href="paquetes.html?categoria=${segment.id}" class="segment-card">
+      <img src="${segment.image}" alt="${segment.name}" loading="lazy">
+      <div class="segment-card__overlay">
+        <span class="segment-card__title">${segment.name}</span>
+      </div>
+    </a>
+  `).join('');
 }
 
 /**
@@ -640,6 +660,13 @@ function renderNewsArticle() {
       <div class="article__tags">
         ${article.tags.map(tag => `<a href="noticias.html?tag=${encodeURIComponent(tag)}" class="article__tag">${tag}</a>`).join('')}
       </div>
+
+      ${article.source ? `
+      <div class="article__source">
+        <strong>Fuente:</strong>
+        ${article.sourceUrl ? `<a href="${article.sourceUrl}" target="_blank" rel="noopener noreferrer">${article.source}</a>` : article.source}
+      </div>
+      ` : ''}
     </article>
   `;
 }
@@ -818,6 +845,7 @@ async function init() {
   switch (page) {
     case 'index.html':
     case '':
+      renderVisualSegments();
       renderFeaturedNews();
       renderLatestNews();
       renderFeaturedPackages();
