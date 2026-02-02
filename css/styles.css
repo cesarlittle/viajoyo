@@ -3,21 +3,21 @@
    Estilo inspirado en turismocity.com.ar
    ============================================ */
 
-/* CSS Variables */
+/* CSS Variables - Paleta Azul y Dorado */
 :root {
-  --primary: #FF5A5F;
-  --primary-dark: #E04850;
-  --secondary: #00A699;
-  --accent: #FC642D;
-  --dark: #484848;
-  --gray-dark: #767676;
-  --gray: #EBEBEB;
-  --gray-light: #F7F7F7;
+  --primary: #1E3A8A;
+  --primary-dark: #1E3A5F;
+  --secondary: #C9A227;
+  --accent: #D4AF37;
+  --dark: #1F2937;
+  --gray-dark: #6B7280;
+  --gray: #E5E7EB;
+  --gray-light: #F9FAFB;
   --white: #FFFFFF;
-  --success: #008A05;
-  --warning: #FFB400;
-  --shadow: 0 2px 8px rgba(0,0,0,0.12);
-  --shadow-lg: 0 8px 28px rgba(0,0,0,0.15);
+  --success: #059669;
+  --warning: #D97706;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.12);
   --radius: 12px;
   --radius-sm: 8px;
   --transition: all 0.25s ease;
@@ -59,7 +59,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--white);
+  background: var(--primary);
   box-shadow: var(--shadow);
 }
 
@@ -106,21 +106,12 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--primary);
 }
 
-.logo img {
-  height: 40px;
+.logo__img {
+  height: 45px;
   width: auto;
-}
-
-.logo span {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  object-fit: contain;
 }
 
 /* Navigation */
@@ -135,14 +126,14 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: 15px;
-  color: var(--dark);
+  color: var(--white);
   transition: var(--transition);
   white-space: nowrap;
 }
 
 .nav__link:hover {
-  background: var(--gray-light);
-  color: var(--primary);
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
 }
 
 .nav__link--active {
@@ -172,7 +163,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   border: none;
   padding: 8px;
   font-size: 24px;
-  color: var(--dark);
+  color: var(--white);
 }
 
 /* ============================================
@@ -196,7 +187,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,90,95,0.85), rgba(252,100,45,0.75));
+  background: linear-gradient(135deg, rgba(30,58,138,0.9), rgba(201,162,39,0.7));
 }
 
 .hero__content {
@@ -1298,13 +1289,13 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 }
 
 .footer__brand {
-  font-size: 28px;
-  font-weight: 800;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+}
+
+.footer__logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer__desc {
@@ -1624,6 +1615,26 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   color: var(--white);
 }
 
+.article__source {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: var(--gray-light);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--gray-dark);
+  border-left: 4px solid var(--primary);
+}
+
+.article__source a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.article__source a:hover {
+  color: var(--secondary);
+}
+
 /* ============================================
    LOADING & EMPTY STATES
    ============================================ */
@@ -1729,4 +1740,107 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 
 .admin-hint--visible {
   display: block;
+}
+
+/* ============================================
+   VISUAL SEGMENTS GRID
+   ============================================ */
+.segments-visual {
+  padding: 48px 0;
+  background: var(--gray-light);
+}
+
+.segments-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .segments-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 150px;
+  }
+
+  .segment-card:first-child {
+    grid-row: span 2;
+  }
+}
+
+.segment-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 150px;
+}
+
+.segment-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.segment-card:hover img {
+  transform: scale(1.08);
+}
+
+.segment-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.segment-card:hover .segment-card__overlay {
+  background: linear-gradient(to top, rgba(30,58,138,0.8) 0%, rgba(30,58,138,0.3) 60%, rgba(30,58,138,0) 100%);
+}
+
+.segment-card__title {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .segment-card:first-child .segment-card__title {
+    font-size: 24px;
+  }
+}
+
+/* News Source */
+.news-card__source {
+  font-size: 11px;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--gray);
+}
+
+.article__source {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--gray-light);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+.article__source a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.article__source a:hover {
+  text-decoration: underline;
 }
